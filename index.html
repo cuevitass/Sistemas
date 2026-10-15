@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema de Préstamo de Netbooks del ITR</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="card-container">
+
+    <header class="header">
+      <div class="title-badge">
+        <h1>Sistema de Préstamo de Netbooks del ITR</h1>
+      </div>
+      <p class="subtitle">Gestion de los equipos escolares</p>
+    </header>
+
+    <main class="content">
+      <h2>Registrar un préstamo</h2>
+
+      <form id="loanForm" onsubmit="event.preventDefault();">
+        <div class="form-group">
+          <label for="student">Nombre del alumno</label>
+          <input 
+            type="text" 
+            id="student" 
+            placeholder="Ingresar nombre del alumno..." 
+            required 
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="course">Curso</label>
+          <input 
+            type="text" 
+            id="course" 
+            placeholder="Ingresar curso al que pertenezca..." 
+            required 
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="serial">Número de serie</label>
+          <input 
+            type="text" 
+            id="serial" 
+            placeholder="Ingresar número de serie del equipo..." 
+            required 
+          />
+        </div>
+
+        <button type="button" class="btn btn-green" id="btnRegister">
+          Registrar prestamo
+        </button>
+
+        <div class="btn-row">
+          <button type="button" class="btn btn-blue" id="btnReturn">
+            Devolver equipo
+          </button>
+          <button type="button" class="btn btn-blue" id="btnHistory">
+            Ver historial
+          </button>
+        </div>
+
+        <button type="button" class="btn btn-red" id="btnClearHistory">
+          Borrar historial
+        </button>
+      </form>
+    </main>
+  </div>
+
+  <div class="modal-overlay" id="historyModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Historial de Préstamos ITR</h3>
+        <button class="close-btn" id="btnCloseModal">&times;</button>
+      </div>
+      <div id="historyContent" class="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
